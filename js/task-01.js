@@ -2,16 +2,14 @@ const categories = document
   .querySelector("#categories")
   .querySelectorAll(".item");
 
-const listCategories = [];
+console.log(`Number of categories: ${categories.length}`);
 
-categories.forEach((elem) => {
-  const title = elem.querySelector("h2").textContent;
-  const items = elem.querySelectorAll("li");
-
-  listCategories.push({
-    Category: title,
-    Elements: items.length,
+function getListCategories() {
+  return [...categories].map((elem) => {
+    const title = elem.querySelector("h2").textContent;
+    const items = elem.querySelectorAll("li");
+    console.log(`Category: ${title}\n Elements: ${items.length}`);
   });
-});
+}
 
-console.log(`Number of categories: ${categories.length}`, listCategories);
+getListCategories();

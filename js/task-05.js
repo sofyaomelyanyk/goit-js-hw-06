@@ -1,12 +1,13 @@
 const input = document.querySelector("#name-input");
 const spanName = document.querySelector("#name-output");
+const defaultName = spanName.textContent;
 
 input.addEventListener("input", onInput);
 
 function onInput(event) {
-  if (!event.target.value) {
-    event.target.value = spanName.textContent;
-  }
+  spanName.textContent = event.currentTarget.value;
 
-  spanName.textContent = event.target.value;
+  if (!event.currentTarget.value) {
+    spanName.textContent = defaultName;
+  }
 }
