@@ -7,11 +7,11 @@ refs.input.addEventListener("blur", onBlur);
 const length = refs.input.dataset.length;
 
 function onBlur(event) {
-  const eventLength = event.currentTarget.value.length;
+  const eventLength = event.target.value.length;
 
-  if (eventLength >= length) {
-    refs.input.classList.add("valid");
-  } else if (eventLength < length) {
+  if (eventLength < length) {
     refs.input.classList.add("invalid");
   }
+
+  refs.input.classList.add("valid");
 }

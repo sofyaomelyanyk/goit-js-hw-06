@@ -23,7 +23,7 @@ const makeImages = (images) => {
   return images.reduce(
     (acc, image) =>
       acc +
-      `<li> <img src="${image.url}" alt="${image.alt}" width = '300' heigth ='250'> </li>`,
+      `<li> <img src="${image.url}" alt="${image.alt}" width = '300'> </li>`,
     ""
   );
 };
