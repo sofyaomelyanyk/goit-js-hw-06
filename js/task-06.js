@@ -10,8 +10,8 @@ function onBlur(event) {
   const eventLength = event.currentTarget.value.length;
 
   if (eventLength >= length) {
-    refs.input.style.borderColor = "#4caf50";
-  } else {
-    refs.input.style.borderColor = "#f44336";
+    refs.input.classList.add("valid");
+  } else if (eventLength < length) {
+    refs.input.classList.add("invalid");
   }
 }
